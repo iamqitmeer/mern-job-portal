@@ -1,10 +1,12 @@
 import express from "express";
 import cookieParser from "cookie-parser";
 import cors from "cors";
-import dotenv from "dotenv"
-import connectDB from "./utils/dbConnect.js";
+import userRoutes from "./routes/user.route.js";
 
-dotenv.config({})
+import dotenv from "dotenv";
+dotenv.config();
+import connectDB from "./utils/dbConnect.js";
+connectDB();
 
 const app = express();
 
@@ -13,23 +15,18 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-const corsOptions = {
-  origin: "http://localhost:5173/",
-  Credentials: true,
-};
-
-app.use(cors(corsOptions));
+app.use(
+  cors({
+    origin: "http://localhost:5173/",
+    Credentials: true,
+  })
+);
 
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, () => {
-  connectDB()
-  console.log(`Server running at port ${PORT}`);
-});
+app.use("/api/v1/auth", userRoutes);
 
-app.get("/", (req, res) => {
-  return res.json({
-    message: "Data Fetched 🎉",
-    data: ["Hello", "World", "I am", "Qitmeers"],
-  });
+
+app.listen(PORT, () => {
+  console.log(`Server running at port ${PORT}`);
 });

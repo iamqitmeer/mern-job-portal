@@ -8,7 +8,7 @@ const userSchema = new Schema(
     role: { type: String, enum: ["student", "recruiter"], required: true },
     profile: {
       bio: { type: String },
-      skils: [{ type: String }],
+      skills: [{ type: String }],
       resume: { type: String }, // Resume URL
       resumeOriginalName: { type: String },
       company: { type: mongoose.Schema.Types.ObjectId, ref: "Company" },
