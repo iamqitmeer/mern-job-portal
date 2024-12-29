@@ -2,6 +2,7 @@ import express from "express";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import userRoutes from "./routes/user.route.js";
+import jobRoutes from "./routes/job.route.js";
 import companyRoutes from "./routes/company.route.js";
 
 import dotenv from "dotenv";
@@ -27,6 +28,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use("/api/v1/auth", userRoutes);
 app.use("/api/v1/company", companyRoutes);
+app.use("/api/v1/job", jobRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server running at port ${PORT}`);

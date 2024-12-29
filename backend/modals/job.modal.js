@@ -9,6 +9,10 @@ const jobSchema = new Schema(
       type: String,
       required: true,
     },
+    experience: {
+      type: Number,
+      required: true,
+    },
 
     requirements: [
       {
@@ -48,4 +52,4 @@ const jobSchema = new Schema(
   { timestamps: true }
 );
 
-export const jobModal = mongoose.model("job", jobSchema);
+export const JobModal = mongoose.model("job", jobSchema);
