@@ -52,4 +52,4 @@ const jobSchema = new Schema(
   { timestamps: true }
 );
 
-export const JobModal = mongoose.model("job", jobSchema);
+export const JobModal = mongoose.model("Job", jobSchema);
