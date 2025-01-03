@@ -72,7 +72,7 @@ export default function SignUpPage() {
     <div className="flex min-h-screen flex-col bg-gradient-to-br from-zinc-50 to-zinc-100 dark:from-zinc-900 dark:to-zinc-800">
       <main className="flex-grow flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <Card className="w-full max-w-md overflow-hidden">
-          <CardHeader className="space-y-1 bg-gradient-to-r from-blue-500 to-purple-600 text-white">
+          <CardHeader className="space-y-1 bg-zinc-900 text-white">
             <CardTitle className="text-2xl font-bold text-center">
               Create your JobPortal account
             </CardTitle>
@@ -255,7 +255,7 @@ export default function SignUpPage() {
             <p className="text-center text-sm text-zinc-600 dark:text-zinc-400">
               Already have an account?{" "}
               <NavLink
-                href="/login"
+                to="/login"
                 className="font-medium text-blue-600 hover:underline dark:text-blue-400"
               >
                 Sign in

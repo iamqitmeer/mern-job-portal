@@ -325,9 +325,7 @@ export default function SettingsPage() {
   return (
     <div className="flex min-h-screen flex-col bg-zinc-50 dark:bg-zinc-900">
       <main className="flex-grow container mx-auto py-12 px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-bold text-center mb-8">
-          Account Settings
-        </h1>
+   
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Sidebar */}
           <Card className="col-span-1 md:row-span-2">

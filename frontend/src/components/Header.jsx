@@ -9,8 +9,11 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { NavLink } from "react-router";
+import { useState } from "react";
 
 export function Header() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   return (
     <header className="tracking-tight sticky top-0 z-50 w-full border-b border-zinc-200 bg-white/80 backdrop-blur-sm dark:border-zinc-800 dark:bg-zinc-900/80">
       <div className="tracking-tight container mx-auto flex h-16 items-center justify-between px-4">
@@ -50,47 +53,59 @@ export function Header() {
           </nav>
         </div>
         <div className="tracking-tight flex items-center space-x-4">
-          <Button
-            variant="ghost"
-            size="icon"
-            className="tracking-tight relative"
-          >
-            <Bell className="tracking-tight h-5 w-5" />
-            <span className="tracking-tight absolute right-0 top-0 flex h-2 w-2">
-              <span className="tracking-tight absolute inline-flex h-full w-full animate-ping rounded-full bg-teal-400 opacity-75"></span>
-              <span className="tracking-tight relative inline-flex h-2 w-2 rounded-full bg-teal-500"></span>
-            </span>
-          </Button>
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
+          {isLoggedIn ? (
+            <>
+              {" "}
               <Button
                 variant="ghost"
-                className="tracking-tight relative h-8 w-8 rounded-full"
+                size="icon"
+                className="tracking-tight relative"
               >
-                <Avatar className="tracking-tight h-8 w-8">
-                  <AvatarImage
-                    src="/placeholder.svg?height=32&width=32"
-                    alt="@user"
-                  />
-                  <AvatarFallback>U</AvatarFallback>
-                </Avatar>
+                <Bell className="tracking-tight h-5 w-5" />
+                <span className="tracking-tight absolute right-0 top-0 flex h-2 w-2">
+                  <span className="tracking-tight absolute inline-flex h-full w-full animate-ping rounded-full bg-teal-400 opacity-75"></span>
+                  <span className="tracking-tight relative inline-flex h-2 w-2 rounded-full bg-teal-500"></span>
+                </span>
               </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
-              <DropdownMenuItem>
-                <NavLink to="/profile">Profile</NavLink>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <NavLink to="/settings">Settings</NavLink>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <NavLink to="/logout">Log out</NavLink>
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
-          <Button className="tracking-tight hidden md:inline-flex">
-            Post a Job
-          </Button>
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button
+                    variant="ghost"
+                    className="tracking-tight relative h-8 w-8 rounded-full"
+                  >
+                    <Avatar className="tracking-tight h-8 w-8">
+                      <AvatarImage
+                        src="/placeholder.svg?height=32&width=32"
+                        alt="@user"
+                      />
+                      <AvatarFallback>U</AvatarFallback>
+                    </Avatar>
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end">
+                  <DropdownMenuItem>
+                    <NavLink to="/profile">Profile</NavLink>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>
+                    <NavLink to="/settings">Settings</NavLink>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>
+                    <NavLink to="/logout">Log out</NavLink>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+              <Button className="tracking-tight hidden md:inline-flex">
+                Post a Job
+              </Button>
+            </>
+          ) : (
+            <NavLink to="/login">
+              {" "}
+              <Button className="tracking-tight hidden md:inline-flex">
+                Login
+              </Button>
+            </NavLink>
+          )}
         </div>
       </div>
     </header>
