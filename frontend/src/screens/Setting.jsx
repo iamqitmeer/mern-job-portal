@@ -92,7 +92,12 @@ import {
   BookOpen,
 } from "lucide-react";
 import { NavLink, useNavigate } from "react-router";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 export default function SettingsPage() {
   const [isLoading, setIsLoading] = useState(false);
