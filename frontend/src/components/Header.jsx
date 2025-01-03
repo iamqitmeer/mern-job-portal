@@ -23,17 +23,18 @@ export function Header() {
         <div className="tracking-tight hidden md:flex md:items-center md:space-x-4">
           <nav className="tracking-tight flex space-x-6">
             <NavLink
-              to="/jobs"
-              className="tracking-tight text-sm font-medium text-zinc-700 hover:text-teal-600 dark:text-zinc-300 dark:hover:text-teal-400"
-            >
-              Find Jobs
-            </NavLink>
-            <NavLink
-              to="/companies"
+              to="/about"
               className="tracking-tight text-sm font-medium text-zinc-700 hover:text-teal-600 dark:text-zinc-300 dark:hover:text-teal-400"
             >
               About
             </NavLink>
+            <NavLink
+              to="/find-job"
+              className="tracking-tight text-sm font-medium text-zinc-700 hover:text-teal-600 dark:text-zinc-300 dark:hover:text-teal-400"
+            >
+              Find Jobs
+            </NavLink>
+
             <NavLink
               to="/companies"
               className="tracking-tight text-sm font-medium text-zinc-700 hover:text-teal-600 dark:text-zinc-300 dark:hover:text-teal-400"
@@ -47,7 +48,6 @@ export function Header() {
               Resources
             </NavLink>
           </nav>
-  
         </div>
         <div className="tracking-tight flex items-center space-x-4">
           <Button

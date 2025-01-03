@@ -50,7 +50,7 @@ export default function Home() {
           <div className="tracking-tight	 container relative z-10 mx-auto text-center">
             <h1 className=" tracking-tight mb-4 text-4xl font-bold md:text-6xl lg:text-7xl">
               Discover Your{" "}
-              <span className="tracking-tight	 text-blue-300">Dream Career</span>
+              <span className="tracking-tight	 text-teal-400">Dream Career</span>
             </h1>
             <p className="tracking-tight	 mb-8 text-xl text-zinc-100 md:text-2xl">
               Connecting ambitious professionals with innovative companies
@@ -61,12 +61,12 @@ export default function Home() {
                 <Input
                   type="text"
                   placeholder="Job title, keywords, or company"
-                  className="tracking-tight	 w-full rounded-full bg-white py-6 pl-10 pr-4 text-lg text-zinc-900 placeholder-zinc-500 focus:ring-2 focus:ring-blue-300 dark:bg-zinc-800 dark:text-white dark:placeholder-zinc-400"
+                  className="tracking-tight	 w-full rounded-full bg-white py-6 pl-10 pr-4 text-lg text-zinc-900 placeholder-zinc-500 focus:ring-2 focus:ring-teal-400 dark:bg-zinc-800 dark:text-white dark:placeholder-zinc-400"
                 />
               </div>
               <Button
                 size="lg"
-                className="tracking-tight	 w-full rounded-full bg-blue-300 text-lg font-semibold text-zinc-900 hover:bg-blue-300 md:w-auto dark:bg-blue-300 dark:text-white dark:hover:bg-blue-300"
+                className="tracking-tight	 w-full rounded-full bg-teal-400 text-lg font-semibold text-zinc-900 hover:bg-teal-400 md:w-auto dark:bg-teal-400 dark:text-white dark:hover:bg-teal-400"
               >
                 Find Jobs
               </Button>
@@ -372,7 +372,7 @@ export default function Home() {
                     </p>
                   </CardContent>
                   <CardFooter>
-                    <div className="tracking-tight	 flex items-center space-x-1 text-blue-300">
+                    <div className="tracking-tight	 flex items-center space-x-1 text-teal-400">
                       {[...Array(5)].map((_, i) => (
                         <Star
                           key={i}
